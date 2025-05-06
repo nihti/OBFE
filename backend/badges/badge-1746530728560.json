@@ -1,0 +1,16 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "type": "Assertion",
+  "recipient": {
+    "type": "email",
+    "identity": "nike.löv@nihti.com"
+  },
+  "badge": {
+    "name": "Testi",
+    "description": "Open Badge Generator",
+    "issuer": {
+      "name": "Nikke"
+    },
+    "issuedOn": "2026-03-01"
+  }
+}

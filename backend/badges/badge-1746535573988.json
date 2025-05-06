@@ -1,0 +1,16 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "type": "Assertion",
+  "recipient": {
+    "type": "email",
+    "identity": "Nikke@nikke.löv"
+  },
+  "badge": {
+    "name": "Badger badger badger",
+    "description": "Testi badge ",
+    "issuer": {
+      "name": "Nikke"
+    },
+    "issuedOn": "2025-05-01"
+  }
+}
