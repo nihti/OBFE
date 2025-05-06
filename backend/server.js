@@ -27,4 +27,26 @@ app.post('/badge', (req, res) => {
   });
 });
 
+app.get('/badges', (req, res) => {
+  fs.readdir(BADGE_DIR, (err, files) => {
+    if (err) {
+      return res.status(500).json({ message: 'Failed to read badge directory.' });
+    }
+
+    const badgeFiles = files.filter(file => file.endsWith('.json'));
+
+    const badgeList = badgeFiles.map(filename => {
+      const fullPath = path.join(BADGE_DIR, filename);
+      const content = fs.readFileSync(fullPath, 'utf8');
+      const json = JSON.parse(content);
+      return {
+        filename,
+        badge: json
+      };
+    });
+
+    res.json(badgeList);
+  });
+});
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
